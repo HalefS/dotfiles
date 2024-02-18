@@ -1,0 +1,27 @@
+Plug 'preservim/nerdtree`
+let mapleader=","
+
+set number
+set relativenumber
+set nospell
+
+set NERDTree
+
+"" mappings
+imap jj <Esc>
+nmap <Leader>w :w<Enter>
+nmap <Leader>q :q<Enter>
+nmap <Leader>x :x<Enter>
+nmap <C-c> <Esc>
+
+"" actions
+nmap <Leader><Leader>r <Action>(Run)
+nmap <Leader><Leader>t <Action>(Test)
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+nmap <Leader>ir <Action>(IdeaVim.ReloadVimRc.reload)
+nmap <Leader>aa <Action>(Actions)
+nmap <Leader><Leader>h <Action>(HideActiveWindow)
+nmap <C-p> <Action>(GotoFile)
+nmap <Leader>e :NERDTreeToggle<Enter>
+nmap <space>s <Action>(GotoSymbol)

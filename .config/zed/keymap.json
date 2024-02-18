@@ -1,0 +1,38 @@
+[
+  {
+    "context": "terminal_panel",
+    "bindings": {
+      "space z": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      "ctrl-p": "file_finder::Toggle",
+      "space c s": "theme_selector::Toggle",
+      "space t": "terminal_panel::ToggleFocus",
+      "shift-k": "editor::Hover",
+      "space v s": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // visual, visual line & visual block modes
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      "ctrl-c": "vim::NormalBefore"
+    }
+  }
+]

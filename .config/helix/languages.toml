@@ -1,0 +1,8 @@
+[[language]]
+name = "java"
+scope = "source.java"
+file-types = ["java", "class", "gradle"]
+roots = ["gradle.settings.ts", "gradlew.bat"]
+auto-format = true
+comment-token = "//"
+config = {command = "jdtls"}

@@ -1,0 +1,1 @@
+export OWM_API_KEY="972f5033e0d75edd04b5ffe71beb5a24"
