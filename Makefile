@@ -1,19 +1,17 @@
+OS := $(shell uname)
 
-P_MANAGER=
-OS=$(shell uname -s)
+PACKAGES := git python3 npm gcc gdb gem zig rustup cargo go
 
-PACKAGES=git gcc fzf
-
-ifeq (OS, Linux)
-	P_MANAGER=apt
-else ifeq
-	$(PM_MAC) install $(PACKAGES)
-	P_MANAGER=brew
+ifeq ($(OS),Darwin)
+    P_MANAGER=brew
+else ifeq ($(OS),Linux)
+    P_MANAGER=sudo apt
 else
-	$(error Unsupported operating system $(OS))
+    $(error Unsupported operating system: $(OS))
 endif
-	
 
 .PHONY: install
-instal:
+
+install:
+	@echo "Installing packages using $(P_MANAGER)..."
 	$(P_MANAGER) install $(PACKAGES)
