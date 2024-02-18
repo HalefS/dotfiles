@@ -523,7 +523,6 @@ local servers = {
     cmd = { "/opt/homebrew/bin//zls" },
     filetypes = { "zig" },
   },
-  ruby_ls = {},
   swift_mesonls = {},
 }
 
