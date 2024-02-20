@@ -11,6 +11,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+source .secrets
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -110,12 +112,6 @@ bindkey -s '^k' "tmux-cht.sh\n"
 export PATH=/opt/homebrew/Cellar/qemu/8.1.0/bin:$PATH
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=~/nvim-macos/bin:$PATH
-export GREENLIGHT_DB_DSN='postgres://greenlight:pa55word@localhost/greenlight' # I KNOW, I KNOW
-export OWM_API_KEY="20348069fbf9996a4a4e2830a06b3320" # I KNOW, I KNOW
-export PSCAN_HOSTS_FILE="newFile.hosts"
-export AMADEUS_TEST_ENDPOINT="https://test.api.amadeus.com/v2"
-export AMADEUS_TEST_KEY="ApOkfU7BRszt5nAdnuf8pjfMaFVaRpGL"
-export AMADEUS_TEST_SECRET="dt1p3qt7Atngw1bA"
 export PATH="/opt/homebrew/Cellar/ctags/5.8_2/bin/:$PATH"
 export PATH="/opt/homebrew/bin/:$PATH"
 export PATH="/opt/homebrew/Cellar/node@16/16.18.0/bin:$PATH"
