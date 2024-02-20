@@ -15,3 +15,8 @@ endif
 install:
 	@echo "Installing packages using $(P_MANAGER)..."
 	$(P_MANAGER) install $(PACKAGES)
+
+.PHONY: push
+
+push:
+	git push origin main
