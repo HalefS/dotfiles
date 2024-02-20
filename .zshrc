@@ -108,19 +108,17 @@ bindkey -s '^k' "tmux-cht.sh\n"
 #
 # Example aliases
 export PATH=/opt/homebrew/Cellar/qemu/8.1.0/bin:$PATH
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=~/nvim-macos/bin:$PATH
-export GREENLIGHT_DB_DSN='postgres://greenlight:pa55word@localhost/greenlight'
-export OWM_API_KEY="20348069fbf9996a4a4e2830a06b3320"
+export GREENLIGHT_DB_DSN='postgres://greenlight:pa55word@localhost/greenlight' # I KNOW, I KNOW
+export OWM_API_KEY="20348069fbf9996a4a4e2830a06b3320" # I KNOW, I KNOW
 export PSCAN_HOSTS_FILE="newFile.hosts"
 export AMADEUS_TEST_ENDPOINT="https://test.api.amadeus.com/v2"
 export AMADEUS_TEST_KEY="ApOkfU7BRszt5nAdnuf8pjfMaFVaRpGL"
 export AMADEUS_TEST_SECRET="dt1p3qt7Atngw1bA"
 export PATH="/opt/homebrew/Cellar/ctags/5.8_2/bin/:$PATH"
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
 export PATH="/opt/homebrew/bin/:$PATH"
 export PATH="/opt/homebrew/Cellar/node@16/16.18.0/bin:$PATH"
-alias hd='hexdump'
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/Library/PostgreSQL/14/bin/psql:$PATH"
@@ -147,6 +145,7 @@ alias cobra="cobra-cli"
 alias gor="go run "
 alias got="go test -v"
 alias goi="go install"
+alias hd='hexdump'
 alias tmuxconfig="nvim ~/.tmux.conf"
 alias tma="tmux attach -t "
 alias tls="tmux ls"
@@ -158,7 +157,8 @@ alias python="python3"
 alias nf="neofetch"
 alias tm="typer -m"
 alias ip="ifconfig en0 | grep \"inet \""
-export PATH="/opt/homebrew/sbin:$PATH"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -169,11 +169,3 @@ fpath=(~/.zsh.d/ $fpath)
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # eval "$(starship init zsh)"
-
-# bun completions
-[ -s "/Users/halefspencer/.bun/_bun" ] && source "/Users/halefspencer/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-autoload -U compinit; compinit
