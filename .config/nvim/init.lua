@@ -82,10 +82,10 @@ require('lazy').setup({
       -- refer to the configuration section below
     }
   },
-  'https://github.com/apple/pkl-neovim.git',
+  "ThePrimeagen/vim-apm",
 
-  -- Smoothie
-  'psliwka/vim-smoothie',
+  -- asciidoctor
+  'habamax/vim-asciidoctor',
 
   -- move
   'fedepujol/move.nvim',
@@ -346,6 +346,12 @@ require 'neodev'.setup()
 
 local utils = require 'config.utils'
 
+-- apm config
+local apm = require("vim-apm")
+
+apm:setup({})
+vim.keymap.set("n", "<leader>apm", function() apm:toggle_monitor() end)
+
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
@@ -523,7 +529,6 @@ local servers = {
     cmd = { "/opt/homebrew/bin//zls" },
     filetypes = { "zig" },
   },
-  swift_mesonls = {},
 }
 
 
@@ -536,18 +541,18 @@ local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
+    end
+  }
 }
 
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-  end
-}
 require('lspconfig').tailwindcss.setup {}
 
 -- [[ Configure nvim-cmp ]]

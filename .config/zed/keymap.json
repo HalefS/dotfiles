@@ -1,14 +1,11 @@
 [
   {
-    "context": "terminal_panel",
-    "bindings": {
-      "space z": "workspace::ToggleZoom"
-    }
-  },
-  {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in normal & visual mode
+      "space s": "outline::Toggle",
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem"
     }
   },
   {
@@ -16,23 +13,78 @@
     "bindings": {
       // put key-bindings here if you want them to work only in normal mode
       "ctrl-p": "file_finder::Toggle",
-      "space c s": "theme_selector::Toggle",
-      "space t": "terminal_panel::ToggleFocus",
+      ", c s": "theme_selector::Toggle",
+      ", , t": "terminal_panel::ToggleFocus",
       "shift-k": "editor::Hover",
-      "space v s": "pane::SplitRight"
+      ", v s": "pane::SplitRight",
+      ", , e": "project_panel::ToggleFocus",
+      ", , w": "workspace::Save",
+      ", , r": "editor::Rename",
+      ", e e": [
+        "workspace::SendKeyStrokes",
+        "oif err != nil {<Enter>}<Esc>Oreturn err<Esc>"
+      ],
+      ", t s": "task::Spawn"
+    }
+  },
+  {
+    "context": "project_panel",
+    "bindings": {
+      "space s": "project_symbols::Toggle",
+      "j": "pane::ActivateNextItem",
+      "k": "pane::ActivatePrevItem",
+      "/": "pane::DeploySearch"
     }
   },
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       // visual, visual line & visual block modes
+      ", z o": "editor::FoldSelectedRanges"
     }
   },
   {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in insert mode
-      "ctrl-c": "vim::NormalBefore"
+      "j j": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "N": "project_panel::NewFile",
+      "cmd-N": "project_panel::NewDirectory",
+      "cmd-x": "project_panel::Cut",
+      "cmd-c": "project_panel::Copy",
+      "cmd-v": "project_panel::Paste",
+      "cmd-alt-c": "project_panel::CopyPath",
+      "alt-cmd-shift-c": "project_panel::CopyRelativePath",
+      "f2": "project_panel::Rename",
+      "enter": "project_panel::Rename",
+      "x": "project_panel::Delete",
+      "alt-cmd-r": "project_panel::RevealInFinder",
+      ", f": "project_panel::NewSearchInDirectory",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrev",
+      "g g": "menu::SelectFirst",
+      "shift-g": "menu::SelectLast"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-p": "file_finder::Toggle",
+      "ctrl-c": "editor::Cancel",
+      "ctrl-w c": "pane::CloseActiveItem",
+      ", t s": "task::Spawn",
+      ", k m": "zed::OpenKeymap"
     }
   }
 ]

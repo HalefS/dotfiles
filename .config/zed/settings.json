@@ -7,23 +7,51 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "inline_completion_provider": "supermaven",
+    "copilot": false
+  },
   "vim_mode": true,
   "relative_line_numbers": true,
   "base_keymap": "VSCode",
   "theme": "Gruvbox Dark",
-  "ui_font_size": 13,
-  "buffer_font_size": 13,
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "inlay_hints": {
-    "enabled": true
+    "enabled": false
   },
-  "format_on_save": "off",
+  "format_on_save": "on",
   "languages": {
     "HTML": {
       "auto_close_tags": true,
       "auto_complete_tags": true,
       "auto_complete_attributes": true,
       "format_on_save": "off"
+    },
+    "JavaScript": {
+      "format_on_save": "on",
+      "show_wrap_guides": true
+    },
+    "C": {
+      "format_on_save": "off"
+    },
+    "Zig": {
+        "format_on_save": "off",
+        "inlay_hints": {
+                "enabled": false
+        }
     }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "o1-preview"
+    },
+    "version": "2",
+    "default_open_ai_model": null
+  },
+  "tabs": {
+    "git_status": true
   }
 }

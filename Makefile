@@ -19,4 +19,9 @@ install:
 .PHONY: push
 
 push:
-	git push origin main
+	@git push origin main
+
+.PHONY: pull
+
+pull:
+	@git pull origin main

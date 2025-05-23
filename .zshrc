@@ -11,7 +11,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-source .secrets
+source ~/.secrets
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,6 +109,8 @@ bindkey -s '^k' "tmux-cht.sh\n"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+export HOMEBREW_NO_AUTO_UPDATE=1
+export DYLD_LIBRARY_PATH=/opt/homebrew/lib
 export PATH=/opt/homebrew/Cellar/qemu/8.1.0/bin:$PATH
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=~/nvim-macos/bin:$PATH
@@ -130,6 +132,7 @@ export C_INCLUDE_PATH="/usr/local/include"
 export LD_LIBRARY_PATH="/usr/local/lib"
 export PATH=$PATH:/opt/homebrew/Cellar/riscv-gnu-toolchain/bin
 export SSH_KEY="~/.ssh/id_rsa"
+export PATH=$PATH:~/zig
 alias m4="/opt/homebrew/Cellar/m4/1.4.19/bin/m4"
 alias zl="source ~/.zshrc"
 alias ports="sudo lsof -i -P -n | grep LISTEN"
@@ -149,12 +152,16 @@ alias ..="cd .."
 alias car="cargo run"
 alias ls="lsd"
 alias lsa="ls -la"
-alias python="python3"
 alias nf="neofetch"
 alias tm="typer -m"
 alias ip="ifconfig en0 | grep \"inet \""
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias vault="ansible-vault"
+alias os="uname -s"
+alias vim="nvim"
+alias min="minutes -f ~/Desktop/notes.md"
+alias python="python3"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -165,3 +172,4 @@ fpath=(~/.zsh.d/ $fpath)
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # eval "$(starship init zsh)"
+export PATH="/opt/openjdk@17/bin:/Users/halefspencer/bin:/Users/halefspencer/Desktop/nand2tetris/tools/:/Users/halefspencer/.emacs.d/bin:/Users/halefspencer/node17/bin:/Users/halefspencer/go/bin:/Users/halefspencer/flyway-8.4.4:/Library/PostgreSQL/14/bin/psql:/Users/halefspencer/.local/bin:/usr/local/mysql/bin:/opt/homebrew/Cellar/node@16/16.18.0/bin:/opt/homebrew/bin/:/opt/homebrew/Cellar/ctags/5.8_2/bin/:/Users/halefspencer/nvim-macos/bin:/opt/homebrew/sbin:/opt/homebrew/Cellar/qemu/8.1.0/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Applications/Wireshark.app/Contents/MacOS:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/halefspencer/.cargo/bin:/Applications/Ghostty.app/Contents/MacOS:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/halefspencer/Library/Application Support/JetBrains/Toolbox/scripts:/Users/halefspencer/.orbstack/bin:/opt/homebrew/Cellar/riscv-gnu-toolchain/bin:/Users/halefspencer/zig"
